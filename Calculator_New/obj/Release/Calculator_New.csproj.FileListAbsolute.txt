@@ -1,0 +1,14 @@
+C:\Users\olegd\source\repos\Calculator_New\bin\Release\Calculator_New.exe.config
+C:\Users\olegd\source\repos\Calculator_New\bin\Release\Calculator_New.exe
+C:\Users\olegd\source\repos\Calculator_New\bin\Release\Calculator_New.pdb
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\MainWindow.g.cs
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\App.g.cs
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New_MarkupCompile.cache
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New_MarkupCompile.lref
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\MainWindow.baml
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New.g.resources
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New.Properties.Resources.resources
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New.csproj.GenerateResource.cache
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New.csproj.CoreCompileInputs.cache
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New.exe
+C:\Users\olegd\source\repos\Calculator_New\obj\Release\Calculator_New.pdb

@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistrationApp"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Registration" Height="900" Width="1200" FontFamily="Times New Roman">
-    <Grid ShowGridLines="False">
+    <Grid  ShowGridLines="False">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -17,10 +18,38 @@
             <RowDefinition Height="*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Popup x:Name="SurnamePopUp" StaysOpen="False" PopupAnimation="Slide" PlacementTarget= "{Binding ElementName=SurnameBox}"  Placement="Bottom" MaxWidth="70">
+            <TextBox IsEnabled="False" Opacity="1"  Foreground ="Black" Background="White"  TextWrapping="Wrap">
+                Please, enter your Surname!
+            </TextBox>
+        </Popup>
 
-        <TextBox FontSize="30" x:Name="NameBox" Grid.Row="0" Grid.Column="0" Margin="281,52,128,343"
-         />
+        <Popup x:Name="NamePopUp" StaysOpen="False"  PlacementTarget= "{Binding ElementName=NameBox}"  Placement="Bottom" MaxWidth="70">
+            <TextBox IsEnabled="False" Opacity="1"  Foreground ="Black" Background="White" TextWrapping="Wrap">
+                Please, enter your Name!
+            </TextBox>
+        </Popup>
 
+        <Popup x:Name="AgePopUp" StaysOpen="False" PlacementTarget= "{Binding ElementName=AgeBox}"  Placement="Bottom" MaxWidth="70">
+            <TextBox IsEnabled="False" Opacity="1"  Foreground ="Black" Background="White" TextWrapping="Wrap">
+                Please, enter your Age!
+            </TextBox>
+        </Popup>
+
+        <Popup x:Name="BirthdayPopUp" StaysOpen="False" PlacementTarget= "{Binding ElementName=BirthdayBox}"  Placement="Bottom" MaxWidth="70">
+            <TextBox IsEnabled="False" Opacity="1"  Foreground ="Black" Background="White" TextWrapping="Wrap">
+                Please, enter your Birthday!
+            </TextBox>
+        </Popup>
+
+        <Popup x:Name="PassswordPopUp" StaysOpen="False" PlacementTarget= "{Binding ElementName=PasswordBox}"  Placement="Bottom" MaxWidth="70">
+            <TextBox IsEnabled="False" Opacity="1"  Foreground ="Black" Background="White" TextWrapping="Wrap">
+                Please, enter your Password!
+            </TextBox>
+        </Popup>
+
+        <TextBox FontSize="30" SpellCheck.IsEnabled="True" Language="ru-ru"  x:Name="NameBox" Grid.Row="0" Grid.Column="0" Margin="281,52,128,343">
+        </TextBox>
         <TextBlock 
             Text="Enter Name:" FontSize="20" Width="120" Height="40" Margin="120,52,365,343"
         />
@@ -46,24 +75,40 @@
         <TextBox FontSize="30" x:Name="BirthdayBox" IsEnabled="True" Grid.Row="0" Grid.Column="0" Margin="281,242,128,155"
          />
 
-        <Button 
-            Cursor="Hand" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" >
-            
-        </Button>
-
         <TextBlock 
             Text="Enter Password:" FontSize="20" Width="150" Height="40" Margin="120,305,321,90"
         />
-        
+
         <PasswordBox FontSize="30" x:Name="PasswordBox" IsEnabled="True" Grid.Row="0" Grid.Column="0" Margin="281,307,128,90"
          />
-        
+
+
         <GridSplitter 
             Grid.Column="1" ShowsPreview="False" Width="10" HorizontalAlignment="Center" VerticalAlignment="Stretch" IsEnabled="False">
             <GridSplitter.Effect>
                 <BlurEffect/>
             </GridSplitter.Effect>
         </GridSplitter>
-        <Button  Content="Register" Click="Button_Click" FontSize ="25" HorizontalAlignment="Left" Margin="226,371,0,0" VerticalAlignment="Top" Width="158" Height="54" Cursor="Pen" Background="#FF53DEB8" BorderBrush="#FFC53838"/>
+
+        <Button Click="Button_Click" MouseLeave="Button_MouseLeave" MouseEnter="Button_MouseEnter" Content ="Sign up" FontSize ="25" HorizontalAlignment="Left" Margin="226,400,0,0" VerticalAlignment="Top" Width="158" Height="54" Cursor="Arrow" Background="Aquamarine" BorderBrush="#FFC53838" Grid.RowSpan="2">
+            <Button.ToolTip>
+                <ToolTip x:Name="Tooltip" Placement="MousePoint" HorizontalOffset="15" VerticalOffset="10" Height="30" Width="70">
+                    <TextBlock AllowDrop="True">Sign up</TextBlock>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <ListView x:Name="List" FontSize="20" Grid.Column="2" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" DisplayMemberBinding="{Binding Path = ID}">ID</GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path = Name}">Имя</GridViewColumn>
+                    <GridViewColumn Width="Auto" DisplayMemberBinding="{Binding Path = SurName}">Фамилия</GridViewColumn>
+                    <GridViewColumn Width="Auto" DisplayMemberBinding="{Binding Path = Age}">Возраст</GridViewColumn>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path = Birthday}">Дата рождения</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Window>

@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Collections.ObjectModel;   
 
 namespace RegistrationApp
 {
-    class Person :IComparer<Person>, IEnumerable<Person>, IEnumerator<Person>
+    class Person : IComparer<Person>, IEnumerable<Person>
     {
+        ObservableCollection<Person> listPersons = new ObservableCollection<Person>();
+
+        public int ID { get; set; } = 0;
+
         public int Age { get; set; }
 
         public string Name { get; set; }
@@ -21,13 +26,10 @@ namespace RegistrationApp
 
         public Person Current { get; }
 
-        int position = -1;
-
-        object IEnumerator.Current { get { return Current; } }
 
         public Person()
         {
-
+            ID++;
         }
 
         public Person(int Age, string Name)
@@ -35,6 +37,8 @@ namespace RegistrationApp
             this.Age = Age;
 
             this.Name = Name;
+
+            ID++;
         }
 
         public Person(int Age, string Name, DateTime Birthday) : this(Age, Name)
@@ -46,6 +50,7 @@ namespace RegistrationApp
         {
             this.Birthday = Birthday;
             this.SurName = SurName;
+            ID++;
         }
 
         public override string ToString()
@@ -71,27 +76,12 @@ namespace RegistrationApp
 
         public IEnumerator<Person> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return listPersons.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator();
-        }
-
-        public bool MoveNext()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Reset()
-        {
-            position = -1;
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
+            return this.GetEnumerator();
         }
     }
     class PersonBirthdayComparer : IComparer<Person>

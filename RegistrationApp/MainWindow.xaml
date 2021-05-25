@@ -65,6 +65,7 @@
             Text="Enter Age:" FontSize="20" Width="120" Height="40" Margin="120,178,345,217"
         />
 
+        
         <TextBox FontSize="30" x:Name="AgeBox" IsEnabled="True" Grid.Row="0" Grid.Column="0" Margin="281,178,128,219"
          />
 

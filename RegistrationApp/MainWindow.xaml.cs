@@ -27,6 +27,8 @@ namespace RegistrationApp
             InitializeComponent();
             var person1 = new Person { Name = "Ivan", Age = 18, Birthday = new DateTime(2002, 12, 3), SurName = "Prilipov" };
             var person2 = new Person { Name = "Valeriy", Age = 15, Birthday = new DateTime(2005, 2, 8), SurName = "Andropov" };
+            var person3 = new Person { Name = "Oleg", Age = 10, Birthday = new DateTime(2010, 2, 8), SurName = "Andropov" };
+
             Persons.Add(person1);
             Persons.Add(person2);
             List.ItemsSource = Persons;
